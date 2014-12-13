@@ -41,6 +41,7 @@ cd php-5.4.33
     --with-mysqli \
     --with-pdo_mysql \
     --with-config-file-path=/usr/local/php-5.4.33/etc \
+    --with-config-file-scan-dir=/usr/local/php-5.4.33/etc/ext \
     --with-iconv \
     --disable-ipv6 \
     --enable-static \
