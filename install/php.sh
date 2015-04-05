@@ -4,7 +4,7 @@
 #
 # author: Lancer He <lancer.he@gmail.com>
 
-yum install -y gcc gcc-c++ libxml2-devel bzip2-devel curl-devel libjpeg-devel libpng-devel libtiff-devel freetype-devel
+yum install -y tar wget gcc gcc-c++ libxml2-devel bzip2-devel curl-devel libjpeg-devel libpng-devel libtiff-devel freetype-devel openssl openssl-devel
 cd /usr/local/src/
 if [ ! -e php-5.4.33.tar.gz ]; then
     wget http://cn2.php.net/distributions/php-5.4.33.tar.gz
