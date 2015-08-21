@@ -11,7 +11,7 @@ if [ ! -e php-5.4.33.tar.gz ]; then
 fi
 
 if [ ! -e libmcrypt-2.5.8.tar.gz ]; then
-    wget http://softlayer.dl.sourceforge.net/sourceforge/mcrypt/libmcrypt-2.5.8.tar.gz
+    wget http://sourceforge.net/projects/mcrypt/files/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz/download -O libmcrypt-2.5.8.tar.gz
 fi
 
 tar zxf libmcrypt-2.5.8.tar.gz
