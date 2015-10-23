@@ -5,6 +5,8 @@
 # author: Lancer He <lancer.he@gmail.com>
 
 yum install -y tar wget gcc gcc-c++ libxml2-devel bzip2-devel curl-devel libjpeg-devel libpng-devel libtiff-devel freetype-devel openssl openssl-devel libc-client-devel libxslt-devel
+yum install libc-client-devel.x86_64
+ln -s /usr/lib64/libc-client.so /usr/lib/libc-client.so
 
 PHP_VERSION="5.4.44"
 WORKER_USER="work"
