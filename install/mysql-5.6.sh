@@ -42,12 +42,23 @@ make install
 
 mkdir /usr/local/mysql-5.6.14/var/
 mkdir /usr/local/mysql-5.6.14/var/log/
+mkdir /usr/local/mysql-5.6.14/var/run/
 chown -R mysql:mysql /usr/local/mysql-5.6.14/var/
 /usr/local/mysql-5.6.14/scripts/mysql_install_db --basedir=/usr/local/mysql-5.6.14 --datadir=/data/mysql-5.6.14 --user=mysql
 
+rm -f /etc/my.cnf
 cp support-files/mysql.server /etc/init.d/mysql.server
 chmod +x /etc/init.d/mysql.server
+mv /usr/local/mysql-5.6.14/my.cnf /usr/local/mysql-5.6.14/my.cnf.development
+echo '[mysqld]
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+datadir=/data/mysql-5.6.14
+socket=/usr/local/mysql-5.6.14/var/mysql.sock
+user=mysql
 
+[mysqld_safe]
+log-error=/usr/local/mysql-5.6.14/var/log/mysqld.log
+pid-file=/usr/local/mysql-5.6.14/var/run/mysqld.pid' > /usr/local/mysql-5.6.14/my.cnf
 cd ..
 rm -rf mysql-5.6.14
 
