@@ -77,7 +77,7 @@ cd zendopcache-7.0.5 && /usr/local/php-${PHP_VERSION}/bin/phpize && ./configure 
 cd .. && rm -rf zendopcache-7.0.5
 
 echo "[opcache]
-zend_extension = /usr/local/php-${PHP_VERSION}/lib/php/extensions/no-debug-zts-20100525/opcache.so
+zend_extension = /usr/local/php-${PHP_VERSION}/lib/php/extensions/no-debug-non-zts-20100525/opcache.so
 opcache.memory_consumption      = 128
 opcache.interned_strings_buffer = 8
 opcache.max_accelerated_files   = 4000
