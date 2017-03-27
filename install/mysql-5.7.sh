@@ -48,7 +48,7 @@ touch /usr/local/mysql-5.7.17/var/log/error.log
 mkdir /usr/local/mysql-5.7.17/var/run/
 chown -R mysql:mysql /usr/local/mysql-5.7.17/var/
 /usr/local/mysql-5.7.17/bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql-5.7.17 --datadir=/data/mysql-5.7.17 --user=mysql
-rm -f /etc/my.cnf /data/mysql-5.7.17/ibdata1 /data/mysql-5.7.17/ib_logfile0 /data/mysql-5.7.17/ib_logfile1
+rm -f /etc/my.cnf
 
 cp support-files/mysql.server /etc/init.d/mysql.server
 cp support-files/mysqld_multi.server /etc/init.d/mysqld_multi.server
@@ -125,11 +125,11 @@ innodb_spin_wait_delay = 30
 
 transaction_isolation = REPEATABLE-READ
 #innodb_additional_mem_pool_size = 16M
-innodb_buffer_pool_size = 45875M
+innodb_buffer_pool_size = 8096M
 innodb_buffer_pool_instances = 8
 innodb_buffer_pool_load_at_startup = 1
 innodb_buffer_pool_dump_at_shutdown = 1
-innodb_data_file_path = ibdata1:1G:autoextend
+innodb_data_file_path = ibdata1:10M:autoextend
 innodb_flush_log_at_trx_commit = 2
 innodb_log_buffer_size = 32M
 innodb_log_file_size = 2G
